@@ -7,7 +7,7 @@ Welcome to day three of our workshop. Today we will be highlighting five feature
 - How to deploy a service
 - Self-Healing
 - Horizontal Pod Auto Scaling
-- How to access the dashboard and CLI
+- How to access the monitoring dashboard
 - How to access log files
 
 We will be using your environment that was prepared on [Day 2.](https://github.com/jmhossain/gitops-workshop-guide/blob/main/mq/README.md)
@@ -77,6 +77,80 @@ Immediately you'll see that as that pod is terminated, a new one is created to r
 ![All good!](https://user-images.githubusercontent.com/81570140/182555184-6bdb81ca-5e4c-4b1e-979d-12fd4effc5c4.png)
 
 But just like that, everything is back to normal!
+
+## Horizontal Pod Auto Scaling
+
+1. Navigate back to the service we deployed earlier under `Workloads` and `Deployments`. Left click `aaa` to view it.
+
+![aaa!](https://user-images.githubusercontent.com/81570140/182557224-61b459ab-caaf-40dc-8b4a-b7ae763b0ee3.png)
+
+2. Viewing the deployment details, you'll see that there is only 1 Pod that is being autoscaled. Click on `Pods` to view the status of it.
+
+![Status](https://user-images.githubusercontent.com/81570140/182557891-f86b1ebe-3df0-4fce-bdff-84118b69be02.png)
+
+![CPU](https://user-images.githubusercontent.com/81570140/182558512-716b4424-f456-468e-ac28-ac9a77c618a0.png)
+
+Looking at the CPU Usage, not much is going on right now where we would need this to be autoscaled up. Let's take a look at some of the settings.
+
+3. In the left menu, select `HorizontalPodAutoscalers` and left click `HPA example`.
+
+![HPA](https://user-images.githubusercontent.com/81570140/182559452-e77bfc32-0ea2-42b3-9f66-75bf41f95463.png)
+
+![image](https://user-images.githubusercontent.com/81570140/182559984-00c602ca-47fd-4d13-93fd-563511b88584.png)
+
+Here you can view some of the user defined settings for the autoscaler. These can be editted in the YAML file. 
+
+Now we'll simulate some traffic to test your autoscaler.
+
+4. Return to your [Shell](https://cloud.ibm.com/shell) and re-enter your OC Login token.
+
+5. Retrieve `aaa` URL.
+```bash
+oc get route -n tools aaa -o template --template='https://{{.spec.host}}'
+```
+
+6. Copy the output and send it to me!
+
+## Monitoring Dashboard
+
+1. In the `Administrator` perspective in the OpenShift Container Platform web console, navigate to `Monitoring` → `Dashboards.`
+
+2. Choose a dashboard in the Dashboard list. Some dashboards, such as etcd and Prometheus dashboards, produce additional sub-menus when selected.
+
+3. Optional: Select a time range for the graphs in the Time Range list.
+
+3a. Set a custom time range by selecting `Custom time range` in the `Time Range` list.
+
+3b. Input or select the `From` and `To` dates and times.
+
+3c. Click `Save` to save the custom time range.
+
+4. Optional: Select a `Refresh Interval.`
+
+5. Hover over each of the graphs within a dashboard to display detailed information about specific items.
+
+## Access Log Files
+
+1. In the `Administrator` perspective in the OpenShift Container Platform web console, navigate to `Workloads` → `Pods`.
+
+2. In the `Project:` dropdown at the top, select `tools`. Open the pod named `aaa`.
+
+![PodLogs](https://user-images.githubusercontent.com/81570140/182571500-af790e2c-ee90-430a-8d1a-e47f77ded9e1.png)
+
+
+3. Select the `Logs` tab. Here, you may view the raw log file or download a copy.
+
+![Logs](https://user-images.githubusercontent.com/81570140/182571208-aa0516bf-2d9d-4d38-975d-1179a236daff.png)
+
+
+
+
+
+
+
+
+
+
 
 
 
