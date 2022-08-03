@@ -107,11 +107,9 @@ But just like that, we've witnessed how OCP will automatically (based on user de
 
 ![HPA Settings](https://user-images.githubusercontent.com/81570140/182683385-3c597809-71f6-4f2e-b16e-263df05c0e91.png)
 
-Looking at the back CPU Usage, not much is going on right now where we would need this to be autoscaled up. Let's take a look at some of the settings.
+Let's return back and view the Pods tab of our deployment. Looking back CPU Usage, not much is going on right now where we would currently need this to be autoscaled up yet. Let's take a look at some of the settings.
 
 ![CPU](https://user-images.githubusercontent.com/81570140/182558512-716b4424-f456-468e-ac28-ac9a77c618a0.png)
-
-
 
 7. In the left menu, select `HorizontalPodAutoscalers` and left click `HPA example`.
 
@@ -119,18 +117,24 @@ Looking at the back CPU Usage, not much is going on right now where we would nee
 
 ![image](https://user-images.githubusercontent.com/81570140/182559984-00c602ca-47fd-4d13-93fd-563511b88584.png)
 
-Here you can view some of the user defined settings for the autoscaler. These can be editted in the YAML file. 
+Here you can view some of the user defined settings that we created for the autoscaler. These can naturally be editted in the YAML file as well.
 
-Now we'll simulate some traffic to test your autoscaler.
+Now let's prepare to simulate some traffic to test your autoscaler. I'll be using JMeter as a load testing tool to send HTTP Requests to your newly created `aaa` service. First let's retrieve the URL of `aaa`.
 
-4. Return to your [Shell](https://cloud.ibm.com/shell) and re-enter your OC Login token.
+8. From the OCP Web Console, switch from `Administrator` to `Developer` view in the left dropdown menu and select `Topology`. Ensure that we are under the correct `Project:` named `tools`. 
 
-5. Retrieve `aaa` URL.
-```bash
-oc get route -n tools aaa -o template --template='https://{{.spec.host}}'
-```
+![Topology](https://user-images.githubusercontent.com/81570140/182685309-169a1ee1-3b4a-4746-a526-746b19064d19.png)
 
-6. Copy the output and send it to me!
+9. Retrieve the URL from the `Open URL` icon in the upper right side of the node. The URL can also be found underneath the `Resources` tab underneath `Routes`.
+
+![URL](https://user-images.githubusercontent.com/81570140/182686241-d7016195-ba3b-41fb-b92f-6370463ca7bb.png)
+
+10. Send this URL to me in the chat and I'll simulate traffic to test your autoscaler! Return back to `Administrator` view, and view the deployment details of `aaa`.
+You should see more pods are spun up depending on the traffic load received. As this happens you should see that more pods are created to distribute the load.
+
+![Load Testing](https://user-images.githubusercontent.com/81570140/182687368-5712c85a-2292-4500-a07c-ee7a39150d8a.png)
+
+11. After testing, return back in around ~15 minutes to see these pods scaled back down.
 
 ## Monitoring Dashboard
 
