@@ -37,7 +37,7 @@ We will be using your environment that was prepared on [Day 2.](https://github.c
 ![Service Deployed](https://user-images.githubusercontent.com/81570140/182547205-bde24052-49ab-4963-99ec-b3037206d825.png)
 
 ## Self-Healing
-Let's take a glance at some of our and see the tangible benefits of how OCP self heals.
+Let's take a glance at some of our pods and see the tangible benefits of how OCP self heals.
 1. Under `Workloads` select `Pods`. 
 
 ![Pods](https://user-images.githubusercontent.com/81570140/182551796-e0816b75-7164-4639-8bf8-267bab8c31c5.png)
