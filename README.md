@@ -136,7 +136,7 @@ oc get route -n tools aaa -o template --template='https://{{.spec.host}}'
 
 1. In the `Administrator` perspective in the OpenShift Container Platform web console, navigate to `Workloads` → `Pods`.
 
-2. In the `Project:` dropdown at the top, select `tools`. Open the pod named `aaa`.
+2. In the `Project:` dropdown at the top, select `tools`. Open one of the pods named `aaa` (there may be multiple).
 
 ![PodLogs](https://user-images.githubusercontent.com/81570140/182571500-af790e2c-ee90-430a-8d1a-e47f77ded9e1.png)
 
