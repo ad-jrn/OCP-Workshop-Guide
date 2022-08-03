@@ -4,7 +4,7 @@
 Red Hat OpenShift Container Platform (OCP) is a cloud-based Kubernetes platform for developing and running containerized applications. It is designed for ease-of-use and flexibility for both developers and end-users. OCP enables organizations to build, deploy, and scale applications quickly both on-premises and in the cloud. All while protecting your infrastructure with enterprise-grade security. This produces a more simple access point to underlying infrastructure that can help manage application life cycle and development workflows.
 
 Welcome to day three of our workshop. Today we will be highlighting five features of OCP:
-- How to deploy a service
+- Deploying a service
 - Self-Healing
 - Horizontal Pod Auto Scaling
 - How to access the monitoring dashboard
@@ -119,6 +119,9 @@ oc get route -n tools aaa -o template --template='https://{{.spec.host}}'
 
 3. Optional: Select a time range for the graphs in the Time Range list.
 
+![Dashboard](https://user-images.githubusercontent.com/81570140/182624429-051ff392-3dd1-4b61-a3af-0156e3baeb19.png)
+
+
 3a. Set a custom time range by selecting `Custom time range` in the `Time Range` list.
 
 3b. Input or select the `From` and `To` dates and times.
@@ -141,28 +144,4 @@ oc get route -n tools aaa -o template --template='https://{{.spec.host}}'
 3. Select the `Logs` tab. Here, you may view the raw log file or download a copy.
 
 ![Logs](https://user-images.githubusercontent.com/81570140/182571208-aa0516bf-2d9d-4d38-975d-1179a236daff.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
