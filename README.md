@@ -93,12 +93,9 @@ But just like that, we've witnessed how OCP will automatically (based on user de
 ![Resource Limit](https://user-images.githubusercontent.com/81570140/182680772-e2989578-4b2b-443b-9393-e988272923bd.png)
 
 4. Set the CPU Request to `600 milicores`.
-
-4b. CPU Limit to `1 cores`.
-
-4c. Memory Request to `500 Mi`.
-
-4d. Memory Limit to `1000 Mi`.
+ CPU Limit to `1 cores`.
+ Memory Request to `500 Mi`.
+ Memory Limit to `1000 Mi`.
 
 ![image](https://user-images.githubusercontent.com/81570140/182681232-d4f9c160-e72c-4273-8efc-dfff643df4c9.png)
 
