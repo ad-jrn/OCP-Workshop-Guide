@@ -168,14 +168,19 @@ There will be multiple menus and submenus to explore based on the metrics that O
 
 5. Return to your [Shell](https://cloud.ibm.com/shell) and log in with your OC Login Token.
 
-6. Navigate to the proper project.
+6. Navigate to the proper project and copy the full name of the `aaa` pod.
 ```bash
 oc project tools
 ```
-7. Copy the full name of the Pod we want to check the logs for.
+```bash
+oc get pods
+```
+![Get Pods](https://user-images.githubusercontent.com/81570140/182692162-82ad60b9-37d1-4340-a544-d42a5af7d8b6.png)
+
+7. Replace the pod name in the command below and run the command.
 
 ```bash
-oc logs aaa-6896dff8df-jl5w4
+oc logs aaa-useyourown-pod
 ```
 
 Depending on whether or not that Pod is still running, you may receive a lot of output. But as you can see, OCP excels in simplifying the work processes shown today.
