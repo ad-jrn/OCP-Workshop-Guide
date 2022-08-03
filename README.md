@@ -90,22 +90,30 @@ But just like that, we've witnessed how OCP will automatically (based on user de
 
 3. On the right hand side on the `Actions` dropdown, select `Edit resource limits`.
 
-![Resource Limit](https://user-images.githubusercontent.com/81570140/182680772-e2989578-4b2b-443b-9393-e988272923bd.png)
+![Add Resource Limit](https://user-images.githubusercontent.com/81570140/182680772-e2989578-4b2b-443b-9393-e988272923bd.png)
 
 4. Set the CPU Request to `600 milicores`.
  CPU Limit to `1 cores`.
  Memory Request to `500 Mi`.
  Memory Limit to `1000 Mi`.
 
-![image](https://user-images.githubusercontent.com/81570140/182681232-d4f9c160-e72c-4273-8efc-dfff643df4c9.png)
+![Resource Limits](https://user-images.githubusercontent.com/81570140/182681232-d4f9c160-e72c-4273-8efc-dfff643df4c9.png)
 
+5. In the same Deployment, on the right hand side on the `Actions` dropdown, select `Add HorizontalPodAutoscaler`.
 
+![image](https://user-images.githubusercontent.com/81570140/182682324-f4c75f0d-f254-4d89-a390-4ed15d589381.png)
+
+6. Here we'll set the definitions for the Autoscaler itself. For the purposes of this workshop, let's set the `Minimum Pods` to `1` and `Maximum Pods` to `7`. Afterwards, set the `CPU Utilization` to `40` and the `Memory Utilization` to `60`. `Save` these settings.
+
+![HPA Settings](https://user-images.githubusercontent.com/81570140/182683385-3c597809-71f6-4f2e-b16e-263df05c0e91.png)
+
+Looking at the back CPU Usage, not much is going on right now where we would need this to be autoscaled up. Let's take a look at some of the settings.
 
 ![CPU](https://user-images.githubusercontent.com/81570140/182558512-716b4424-f456-468e-ac28-ac9a77c618a0.png)
 
-Looking at the CPU Usage, not much is going on right now where we would need this to be autoscaled up. Let's take a look at some of the settings.
 
-3. In the left menu, select `HorizontalPodAutoscalers` and left click `HPA example`.
+
+7. In the left menu, select `HorizontalPodAutoscalers` and left click `HPA example`.
 
 ![HPA](https://user-images.githubusercontent.com/81570140/182559452-e77bfc32-0ea2-42b3-9f66-75bf41f95463.png)
 
