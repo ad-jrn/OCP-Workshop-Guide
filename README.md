@@ -72,7 +72,12 @@ Here we will simulate what would happen if someone 'accidentally' deleted one of
 
 ![Oh no!](https://user-images.githubusercontent.com/81570140/182554102-38e011a8-3366-4d40-83d2-8cc0adb35102.png)
 
-Immediately you'll see that as that pod is terminated, a new one is created to replace it. This is because OpenShift is constantly monitoring and realizes that the current state (1 Pod) does not match the desired state (2 Pods).
+Immediately you'll see that as that pod is terminated, a new one is created to replace it. You'll notice as well that the name of this new pod is different from the old one. This is because OpenShift is constantly monitoring and realizes that the current state (1 Pod) does not match the desired state (2 Pods).
+
+![All good!](https://user-images.githubusercontent.com/81570140/182555184-6bdb81ca-5e4c-4b1e-979d-12fd4effc5c4.png)
+
+But just like that, everything is back to normal!
+
 
 
 
