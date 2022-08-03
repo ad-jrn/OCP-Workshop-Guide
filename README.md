@@ -134,7 +134,7 @@ You should see more pods are spun up depending on the traffic load received. As 
 
 ![Load Testing](https://user-images.githubusercontent.com/81570140/182687368-5712c85a-2292-4500-a07c-ee7a39150d8a.png)
 
-11. After testing, return back in around ~15 minutes to see these pods scaled back down.
+11. After testing, return back in around ~15 minutes to confirm that these pods are scaled back down.
 
 ## Monitoring Dashboard
 
@@ -152,6 +152,7 @@ You should see more pods are spun up depending on the traffic load received. As 
 3b. Input or select the `From` and `To` dates and times.
 
 3c. Click `Save` to save the custom time range.
+
 
 4. Optional: Select a `Refresh Interval.`
 
