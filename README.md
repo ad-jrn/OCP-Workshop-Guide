@@ -142,32 +142,40 @@ You should see more pods are spun up depending on the traffic load received. As 
 
 2. Choose a dashboard in the Dashboard list. Some dashboards, such as etcd and Prometheus dashboards, produce additional sub-menus when selected.
 
-3. Optional: Select a time range for the graphs in the Time Range list.
+3. Optional: Select a time range for the graphs in the Time Range list. Set a custom time range by selecting `Custom time range` in the `Time Range` list. Input or select the `From` and `To` dates and times. Click `Save` to save the custom time range.
 
 ![Dashboard](https://user-images.githubusercontent.com/81570140/182624429-051ff392-3dd1-4b61-a3af-0156e3baeb19.png)
-
-
-3a. Set a custom time range by selecting `Custom time range` in the `Time Range` list.
-
-3b. Input or select the `From` and `To` dates and times.
-
-3c. Click `Save` to save the custom time range.
-
 
 4. Optional: Select a `Refresh Interval.`
 
 5. Hover over each of the graphs within a dashboard to display detailed information about specific items.
 
-## Access Log Files
+There will be multiple menus and submenus to explore based on the metrics that OCP records.
+
+## Accessing Log Files
 
 1. In the `Administrator` perspective in the OpenShift Container Platform web console, navigate to `Workloads` → `Pods`.
 
-2. In the `Project:` dropdown at the top, select `tools`. Open one of the pods named `aaa` (there may be multiple).
+2. In the `Project:` dropdown at the top, ensure `tools` is selected. Open one of the pods named `aaa` (there may be multiple).
 
 ![PodLogs](https://user-images.githubusercontent.com/81570140/182571500-af790e2c-ee90-430a-8d1a-e47f77ded9e1.png)
-
 
 3. Select the `Logs` tab. Here, you may view the raw log file or download a copy.
 
 ![Logs](https://user-images.githubusercontent.com/81570140/182571208-aa0516bf-2d9d-4d38-975d-1179a236daff.png)
 
+4. The webview is a much easier alternative to what previously would be done in CLI.
+
+5. Return to your [Shell](https://cloud.ibm.com/shell) and log in with your OC Login Token.
+
+6. Navigate to the proper project.
+```bash
+oc project tools
+```
+7. Copy the full name of the Pod we want to check the logs for.
+
+```bash
+oc logs aaa-6896dff8df-jl5w4
+```
+
+Depending on whether or not that Pod is still running, you may receive a lot of output. But as you can see, OCP excels in simplifying the work processes shown today.
