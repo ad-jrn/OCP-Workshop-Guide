@@ -28,6 +28,8 @@ We will be using your environment that was prepared [earlier.](https://github.co
 
 4. Today for demononstration purposes, we will be deploying from a preloaded image from your environment's internal registry. This is to simulate deployment from your own private or public images. From the dropdowns labeled Project/Image Stream:Tag, select `tools` / `aaa`: `latest`
 
+`aaa` is the name of the image for a test javascript application that we have created. This will be used later to demonstrate autoscaling. 
+
 ![Deploy Settings](https://user-images.githubusercontent.com/81570140/182545551-3121b732-828e-4834-af37-b5b2c85d86fb.png)
 
 5. Default options will prepopulate. Take a glance at the options and settings available. Without changing the default settings, select `create`.
