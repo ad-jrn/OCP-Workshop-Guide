@@ -50,6 +50,7 @@ Let's take a glance at some of our other pods and see the tangible benefits of h
 
 3. In the search bar, type in `nav`.
 
+Platform Navigator is the UI for CP4I.
 ![Nav](https://user-images.githubusercontent.com/81570140/182552415-7cd54c46-2ac8-4c50-87b3-b6835ec3d001.png)
 
 4. Select the Owner of one of the running Pods for `integration-navigator`.
