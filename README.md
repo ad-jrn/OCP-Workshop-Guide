@@ -187,3 +187,5 @@ oc logs aaa-useyourown-pod
 ```
 
 Depending on whether or not that Pod is still running, you may receive a lot of output. But as you can see, OCP excels in simplifying the work processes shown today.
+
+And that will conclude our workshops for today! I highly recommend continuing to explore the web console, as it is your own temporary environment. Please refrain from making any permanent changes until after the workshop tomorrow.
